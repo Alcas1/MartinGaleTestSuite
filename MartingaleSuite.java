@@ -1,10 +1,11 @@
 
 
+import java.security.SecureRandom;
 import java.util.Random;
 
 public class MartingaleSuite {
 
-	static int money=1000;
+	static int money=100;
 	static int loseStreak=0;
 	static int maxLoseStreak=0;
 	static int totalLoseStreak=0;
@@ -14,6 +15,7 @@ public class MartingaleSuite {
 	static int currentMaxBank=money;
 	static int maxBankTotals=0;
 	static int minBets=0;
+	
 	public static void main(String args[])
 	{
 
@@ -59,7 +61,7 @@ public class MartingaleSuite {
 				money=0;
 			}
 			//System.out.println(money);
-			Random r = new Random();
+			SecureRandom r = new SecureRandom();
 			int result=r.nextInt(2);
 			if(result==0)
 			{
@@ -97,7 +99,13 @@ public class MartingaleSuite {
 	}
 
 
-
+	public static int semiRandom() throws InterruptedException
+	{
+		SecureRandom s=new SecureRandom();
+		//Random r=new Random();
+		System.out.println("1");
+		return s.nextInt(2);
+	}
 
 
 
